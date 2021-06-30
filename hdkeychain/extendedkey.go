@@ -18,11 +18,11 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/btcsuite/btcd/btcec"
-	"github.com/btcsuite/btcd/chaincfg"
-	"github.com/btcsuite/btcd/chaincfg/chainhash"
-	"github.com/btcsuite/btcutil"
-	"github.com/btcsuite/btcutil/base58"
+	"github.com/firobridge/btcd/btcec"
+	"github.com/firobridge/btcd/chaincfg"
+	"github.com/firobridge/btcd/chaincfg/chainhash"
+	"github.com/firobridge/btcutil"
+	"github.com/firobridge/btcutil/base58"
 )
 
 const (
@@ -475,7 +475,7 @@ func (k *ExtendedKey) Neuter() (*ExtendedKey, error) {
 func (k *ExtendedKey) CloneWithVersion(version []byte) (*ExtendedKey, error) {
 	if len(version) != 4 {
 		// TODO: The semantically correct error to return here is
-		//  ErrInvalidHDKeyID (introduced in btcsuite/btcd#1617). Update the
+		//  ErrInvalidHDKeyID (introduced in firobridge/btcd#1617). Update the
 		//  error type once available in a stable btcd / chaincfg release.
 		return nil, chaincfg.ErrUnknownHDKeyID
 	}
